@@ -3,16 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Título del hito</title>
+    <style>
+        * {
+box-sizing: border-box;
+}
+nav ul li a {
+display:block;
+}
+nav ul li a[aria-expanded="false"] ~ ul {
+display:none;
+}
+nav ul li a[aria-expanded="true"] ~ ul {
+display:block;
+}
+nav > ul > li > a[aria-haspopup]::after {
+content:url("\25BC");
+}
+nav ul li ul a[aria-haspopup]::after {
+content:url("\25B6");
+}
+nav ul {
+list-style-type:none;
+}
+        #skip {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+#skip:focus {
+left:auto;
+width:auto;
+height:auto;
+}
+main{
+background-color: rgb(205, 217, 255);
+}
+footer{
+background-color: rgb(181, 223, 223);
+}
+* {
+box-sizing: border-box; /* width = border+padding+content */
+}
+p {
+color:rgb(238,0,0);
+background-color:rgb(255,255,255);
+}
+p:nth-of-type(2n+1){
+color:rgb(255,0,0);
+letter-spacing:normal !important;
+word-spacing:normal !important;
+line-height:normal !important;
+margin:0 !important;
+}
+p:nth-of-type(2n){
+color:rgb(0,0,255);
+letter-spacing:normal;
+word-spacing:normal;
+line-height:normal;
+margin:0;
+}
+#gridSP {
+display:grid;
+grid-template-columns:auto;
+grid-template-rows:auto auto auto 1fr auto;
+}
+/* Reglas para tabletas */
+
+@media only screen and (min-width: 768px) {
+nav > ul {
+display:flex;
+}
+nav > ul > li {
+width:100px;
+flex-grow:1;
+position:relative;
+}
+nav ul li ul {
+position:absolute;
+z-index:1;
+width:100%;
+}
+nav ul li ul li {
+position:relative;
+}
+nav ul li ul li ul {
+top:0px;
+left:100%;
+}
+nav ul li:last-child ul li ul {
+left:-100%;
+}
+
+
+main #gridT {
+display:grid;
+grid-template-columns:0.6fr 0.4fr;
+grid-template-rows:auto;
+grid-column-gap:1em;
+}
+nav:nth-of-type(1) > ul {
+display:flex;
+flex-direction:row;
+}
+nav:nth-of-type(1) ul li {
+flex-basis:auto;
+}
+nav:nth-of-type(1) ul li.MiPerfil {
+margin-left:auto;
+}
+}
+/* Reglas para equipos de escritorio */
+@media only screen and (min-width: 992px) {
+/* Reglas CSS */
+}
+header{
+    color:rgb(0,0,255);
+/* Propiedades predeterminadas de h1 */
+display: block;
+font-size: 2em;
+margin-top: 0.67em;
+margin-bottom: 0.67em;
+margin-left: 0;
+margin-right: 0;
+font-weight: bold;
+}
+h1 {
+color:rgb(0,0,255);
+}
+table, td, th {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+    </style>
 </head>
 <body>
     <header>
         <h2>Cabecera</h2>
         </header>
-<nav aria-label=”Navegación secundaria”><!-- Navegación --></nav>
-<nav aria-label=”Navegación principal”><!-- Navegación --></nav>
+        <a id=”skip” href="#footer">Saltar navegación</a>
+        <nav aria-label="Menú principal">
+            <ul role=”menubar” aria-label=”Menú principal”>
+            <li role=”none”><a role=”menuitem” aria-haspopup=”true”
+            aria-expanded=”false” href="#">TopItem1</a>
+            <ul role=”menu”>
+            <li role=”none”><a role=”menuitem” aria-haspopup=”true”
+            aria-expanded=”false” href="#">Item1</a>
+            <ul role=”menu”>
+            <li role=”none”><a role=”menuitem”
+            href="#">SubItem1</a></li>
+            <li role=”none”><a role=”menuitem”
+            href="#">SubItem2</a></li>
+            </ul>
+            </li>
+            <li role=”none”><a role=”menuitem”
+            href="#">Item2</a></li>
+            <li role=”none”><a role=”menuitem”
+            href="#">Item3</a></li>
+            <ul>
+            </li>
+            <li role=”none”><a role=”menuitem” aria-haspopup=”true”
+            aria-expanded=”false” href="#">TopItem2</a>
+            <ul role=”menu”>
+                <li role=”none”><a role=”menuitem”
+                    href="#">Item1</a></li>
+                    <li role=”none”><a role=”menuitem”
+                    href="#">Item2</a></li>
+                    <li role=”none”><a role=”menuitem”
+                    href="#">Item3</a></li>
+                    </ul>
+                    <!-- etc. -->
+                    </ul>
+                    </nav>
+                    <ul>
+                        <li><a href=”mapa.html”>Mapa</a></li>
+                        <li><a href=”enlaces.html”>Enlaces</a></li>
+                        <li><a href=”incidencias.html”>Incidencias</a></li>
+                        <li><a class=”MiPerfil” href=”miperfil.html”>Mi
+                        Perfil</a></li>
+                        </ul>
 <main><main>
     <h1>Daily Planet</h1>
     <h2>Internacional</h2>
@@ -94,7 +304,330 @@ alternativo"></i>
 <span class="screenreader">Texto alternativo para lectores de
 pantalla de un icono de font awesome. Está incluida la etiqueta link pero no funciona</span>
 
+<h2>Tablas</h2>
+
+<table>
+    <caption>Ventas mensuales</caption>
+    <tr>
+    <th>Enero</th>
+    <th>Febrero</th>
+    <!-- etc. -->
+    </tr>
+    <tr>
+    <td>34.000,00€</td>
+    <td>25.000,00€</td>
+    <!-- etc. -->
+    </tr>
+    <!-- etc. -->
+    </table>
+<h2>Tablas multinivel</h2>
+
+<p id=”descripcion22222”>El encabezado de la primera columna muestra
+    el horario. El resto de encabezados los días de la semana.</p>
+    <table aria-describedby=descripcion22222>
+    <caption>Programación</caption>
+    <tr>
+    <td></td>
+    <th id="d1">Lunes</th>
+    <th id="d2">Martes</th>
+    <!-- etc. -->
+
+    </tr>
+    <tr>
+    <th id="t1">8:00 - 9:00</th>
+    <td headers="d1 t1">Matemáticas</td>
+    <td headers="d2 t1">Lengua</td>
+    <!-- etc. -->
+    </tr>
+    <tr>
+    <th id="t2">9:00 - 10:00</th>
+    <td headers="d1 t2">Historia</td>
+    <td headers="d2 t2">Matemáticas</td>
+    <!-- etc. -->
+    </tr>
+    <!-- etc. -->
+    </table>
+
+    <h2>Formularios</h2>
+
+    <form>
+        <fieldset>
+        <legend>Datos Personales</legend>
+        <!-- Controles del apartado “Datos Personales” -->
+        </fieldset>
+        <fieldset>
+        <legend>Solicitud</legend>
+        <!-- Controles del apartado “Solicitud” -->
+        </fieldset>
+        <fieldset>
+            <legend>Sexo</legend>
+            <input id="Mujer" type="radio" name="Sexo" value="Mujer" />
+            <label for="Mujer">Mujer</label>
+            <input id="Hombre" type="radio" name="Sexo" value="Hombre" />
+            <label for="Hombre">Hombre</label>
+            </fieldset>
+            <!-- Casillas de verificación -->
+            <fieldset>
+            <legend>Seleccione las semanas en las que se encuentra
+            interesado</legend>
+            <input id="Semana1" type="checkbox" name="Semana1"
+            value="Semana1" />
+            <label for="Semana1">Semana1</label>
+            <input id="Semana2" type="checkbox" name="Semana2"
+            value="Semana2" />
+            <label for="Semana2">Semana2</label>
+            </fieldset>
+            <label for="Dia">Seleccione un día de la semana</label>
+<select id="Dia" name="Dia">
+<option value="">Sin seleccionar</option>
+<optgroup label="Laborales">
+<option value="Lunes">Lunes</option>
+<option value="Martes">Martes</option>
+<option value="Miércoles">Miércoles</option>
+<option value="Jueves">Jueves</option>
+<option value="Viernes">Viernes</option>
+</optgroup>
+<optgroup label="Festivos">
+<option value="Sabado">Sabado</option>
+<option value="Domingo">Domingo</option>
+</optgroup>
+</select>
+<label for="Comentario">Comentario</label>
+<textarea id="Comentario" name="Comentario" placeholder="Escriba
+aquí su comentario" rows="6"></textarea>
+<input type="submit" value="Enviar" />
+<input type="reset" value="Cancelar" />
+<input type="image" src="gobierno.jpg" alt="Enviar" />
+<input type="text" name="buscar" aria-label="Buscar" />
+<button type="submit">Buscar</button>
+<p>Intrucciones;</p>
+<label for="DNI">DNI</label>
+
+<input id="DNI" type="text" name="DNI" aria-
+describedby="formatodni" />
+
+<span id="formatodni">Formato DNI: 12345678A</span>
+
+<h2>Validaciones</h2>
+
+<label for="Nombre"><abbr title="campo obligatorio">*</abbr>
+    Nombre</label>
+    <input id="Nombre" type="text" name="Nombre" required="required"
+    />
+    <label for="DNI">DNI</label>
+    
+    <input id="DNI" type="text" name="DNI" aria-
+    describedby="formatodni" pattern="\d{8}[A-Z]{1}" />
+    
+    <span id="formatodni”>Formato DNI: 12345678A"></span>
+        <!-- etc. -->
+        <label for="Nombre"><abbr title="campo obligatorio">*</abbr>
+            Nombre</label>
+            <input id="Nombre" type="text" name="Nombre" required="required"
+            autocomplete=”given-name” />
+        <p class="StatusOK">El formulario ha sido enviado con éxito.</p>
+<!-- Mensaje de envío incorrecto -->
+<p class="StatusERROR">Se ha producido un error en el envío del
+formulario.</p>
+        </form>
+
+        <h2>Multimedia</h2>
+        <!-- Video -->
+<video controls="controls">
+    <source src="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_640_3MG.mp4" type="video/mp4" />
+    <source src="https://file-examples-com.github.io/uploads/2020/03/file_example_WEBM_640_1_4MB.webm" type="video/webm" />
+    <!-- Subtítulos y descripciones de audio -->
+    <track src="https://gist.githubusercontent.com/samdutton/ca37f3adaf4e23679957b8083e061177/raw/e19399fbccbc069a2af4266e5120ae6bad62699a/sample.vtt" kind="captions" srclang="es"
+    label="español" />
+    <track src="https://gist.githubusercontent.com/samdutton/ca37f3adaf4e23679957b8083e061177/raw/e19399fbccbc069a2af4266e5120ae6bad62699a/sample.vtt" kind="descriptions" srclang="es" />
+    </video>
+    <h4>Estos videos tienen archivos vtt para su traducción inmediata, aunque no está del todo implementado y no funciona</h4>
+    <!-- Audio -->
+    <audio controls="controls">
+    <source src="https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3" type="audio/mpeg" />
+    <source src="https://file-examples-com.github.io/uploads/2017/11/file_example_WAV_1MG.wav" type="audio/wav" />
+    </audio>
+
+    <p><strong>Alicia:</strong> “¿Me podrías indicar, por favor,
+        hacia dónde tengo que ir desde aquí?”</p>
+        <p><strong>Gato:</strong> “Eso depende de a dónde quieras
+        llegar.”</p>
+        <p><strong>Alicia:</strong> “A mí no me importa demasiado a
+            dónde...”</p>
+            <!-- etc. -->
+
+            <h3>Diseño adaptativo</h3>
+            <!-- Grid SmartPhone -->
+<div id=”gridSP”>
+    <header><!-- Encabezado --></header>
+    <nav aria-label=”Navegación secundaria”><!-- Navegación --></nav>
+    <nav aria-label=”Navegación principal”><!-- Navegación --></nav>
+    <main>
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <!-- Grid Tablet -->
+    <div id=”gridT”>
+    <div>
+    <!-- Contenido -->
+    </div>
+    <div>
+    <!-- Contenido -->
+    </div>
+    </div>
     </main>
-<footer><!-- Pie --></footer>
+    <footer><!-- Pie --></footer>
+    </div>
+<h2>Flexbox. Pon la web en modo móvil/tableta para visualizarlo mejor</h2>
+<nav aria-label=”Navegación secundaria”>
+
+    </nav>
+    <a href="javascript:(function(){var col =
+        document.querySelectorAll('p');col.forEach(function(el,index){el
+        
+        .setAttribute('style','letter-spacing:0.12em;word-
+        spacing:0.16em;line-height:1.5em;margin:1em
+        
+        0;');});})();">Campiar atributos P</a>
+
+        <p><output id="output1" aria-live=”polite”>&nbsp;</output></p>
+        <p><a id="anchor1" href="#">Salúdame</a></p>
+        <script>
+window.addEventListener("load",function(e){
+var anchor1 = document.querySelector("#anchor1");
+var output1 = document.querySelector("#output1");
+function hSaludo(e){
+output1.innerHTML = "!Hola!";
+}
+anchor1.addEventListener("mouseover",hSaludo);
+anchor1.addEventListener("focus",hSaludo);
+});
+        </script>
+
+<a href="https://www.boe.es/diario_boe/" target="_blank" title="Abre en nueva ventana">Boletín Oficial del Estado en una página nueva</a>
+
+
+
+<form id=”form1”>
+    <label for="Dia">Día</label>
+    <select id="Dia" name="Dia">
+    <option value="">Seleccione un día</option>
+    <option value="Lunes">Lunes</option>
+    <option value="Martes">Martes</option>
+    <option value="Miércoles"
+    onchange="form1.submit();">Miércoles</option>
+    <option value="Jueves">Jueves</option>
+    <option value="Viernes">Viernes</option>
+    </select>
+    </form>
+
+<script>
+    window.addEventListener("load",function(e){
+//Device
+var device = document.body.clientWidth > 768 ? "tablet" :
+"smartphone";
+window.onresize = function(e){
+device = document.body.clientWidth > 768 ? "tablet" :
+"smartphone";
+}
+//nav > ul[role="menubar"]
+var root = document.querySelector("nav > ul");
+root.setAttribute("role","menubar");
+root.setAttribute("aria-label","Menú principal");
+//ul[role="menu"]
+var col_ul = document.querySelectorAll("nav > ul ul");
+col_ul.forEach(function(el,index){
+el.setAttribute("role","menu");
+});
+//li[role="none"]
+var col_li = document.querySelectorAll("nav li");
+col_li.forEach(function(el,index){
+el.setAttribute("role","none");
+});
+//a[role="menuitem"]
+var col_a = document.querySelectorAll("nav a");
+col_a.forEach(function(el,index){
+el.setAttribute("role","menuitem");
+//aria-haspopup & aria-expanded
+if(el.nextElementSibling != null){
+el.setAttribute("aria-haspopup","true");
+el.setAttribute("aria-expanded","false");
+}
+//tabindex
+if(index == 0){
+el.setAttribute("tabindex",0);
+}
+else{
+el.setAttribute("tabindex",-1);
+}
+//aria-current
+var href = el.href.split("/");
+var el_page = href[href.length-1];
+var url = window.location.toString().split("/");
+var url_page = url[url.length-1];
+if(el_page == url_page){
+el.setAttribute("aria-current","page");
+}
+})
+})
+</script>
+
+
+<script>
+    function tabIndex(item){
+col_a.forEach(function(el,index){
+if(el == item){
+el.setAttribute("tabindex",0);
+}
+else{
+el.setAttribute("tabindex",-1);
+}
+});
+
+var col_ariaexpanded = document.querySelectorAll("nav a[aria-expanded]");
+
+//Onmouseenter
+col_a.forEach(function(el,index){
+el.addEventListener("mouseenter",function(e){
+if(device == "tablet"){
+//Código encargado de: desplegar los menús sobre los
+}
+});
+});
+}
+
+
+document.querySelector("nav").addEventListener("mouseleave",
+function(e){
+if(device == "tablet"){
+//Timer
+t = setTimeout(function(e){
+col_ariaexpanded.forEach(function(el,index){
+el.setAttribute("aria-expanded","false");
+});
+},1000);
+}
+});
+
+
+document.addEventListener("keydown",function(e){
+if(e.keyCode == 27){
+col_ariaexpanded.forEach(function(el,index){
+el.setAttribute("aria-expanded","false");
+});
+}
+});
+
+col_ariaexpanded.forEach(function(el,index){
+el.addEventListener("click",function(e){
+if(device == "smartphone"){
+//Código encargado de desplegar o replegar los menús y
+}
+});
+});
+</script>
+
+    </main>
+<footer>Pie de página</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
