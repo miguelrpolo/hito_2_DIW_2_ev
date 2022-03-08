@@ -1,24 +1,2 @@
-# El hito es el archivo hito_2_diw_2_ev.html
+# El hito es el archivo hito_2_diw_2_ev.html y su PDF
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
