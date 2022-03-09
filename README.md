@@ -1,24 +1,6 @@
-# prueba
+# El hito es el archivo hito_2_diw_2_ev.html y su PDF está dentro de este GITHUB
 
-## Project setup
-```
-npm install
-```
+#Link al pryecto firebase: https://hito-2-diw-miguel-2-ev.web.app
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+#Ejemplo con una Landing: https://hito-2-diw-miguel-2-ev.web.app/ejemplo/index.html
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
