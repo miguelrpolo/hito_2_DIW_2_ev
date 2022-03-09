@@ -5,9 +5,9 @@
     <nav role="navigation">
       <h1><a href="#">Asperion</a></h1>
       <ul class="nav-ul">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#sec-intro">Home</a></li>
+        <li><a href="#sec-events">Events</a></li>
+        <li><a href="#sec-multimedia">Multimedia</a></li>
       </ul>
     </nav>
   </header>
@@ -15,7 +15,7 @@
     <section class="sec-intro" role="section">
       <img src="imagen.jpg" alt="Imagen JPG" />
       <h1>Be Innovative!</h1>
-      <h3>Nota: Muchas modificaciones de accesibilidad no son visibles en primer plan</h3>
+      <h3 class="nota">Nota: Muchas modificaciones de accesibilidad no son visibles a primera vista</h3>
     </section>
     <section class="sec-boxes" role="section">
       <adrticle class="box">
@@ -115,16 +115,48 @@
         </div>
       </div>
     </section>
+    <section class="sec-grid" role="section">
+      <hr />
+      <h1>Grid o Flex?</h1>
+      <div class="grid-container">
+        <div class="item1">Al final, hemos incorporado Grid</div>
+        <div class="item2">Grid ofrece una flexicidad excelente para ordenar la información en bloques</div>
+        <div class="item3">Por lo tanto, una Grid bie diseñada puede marcar una gran diferencia.</div>  
+        <div class="item4">A diferencia de Flex, cuyas normas están más limitadas, Grid es mucho más libre</div>
+        <div class="item5">Aunque eso tambien tiene desventajas. Un grid mal hecho conlleva al caos.</div>
+      </div>
+      </div>
+    </section>
+    <section class="sec-multimedia" role="section">
+      <hr />
+      <h1>Nuestra multimedia!</h1>
+      <div class="contenido">
+        <video controls="controls">
+          <source src="../video1.mp4" type="video/mp4" />
+          <source src="../video1.webm" type="video/mp4" />
+          <!-- Subtítulos y descripciones de audio -->
+          <track src="../traduccion.vtt" kind="captions" srclang="es"
+          label="español" />
+          <track src="../traduccion.vtt" kind="descriptions" srclang="es" />
+          </video>
+          <h4>Estos videos tienen archivos vtt para su traducción inmediata, aunque no está del todo implementado y no funciona</h4>
+          <!-- Audio -->
+          <audio controls="controls">
+          <source src="../audio1.mp3" type="audio/mp3" />
+          <source src="../audio1.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <br>
+        <hr>
+    </section>
   </main>
 </div>
 <footer>
   <nav role="navigation">
     <ul class="nav-ul">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Technologies</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contacts</a></li>
+      <li><a href="#sec-intro">Home</a></li>
+      <li><a href="#sec-events">Events</a></li>
+      <li><a href="#sec-multimedia">Multimedia</a></li>
     </ul>
   </nav>
   <p class="copy">&copy; Alex Devero Design 2014</p>
